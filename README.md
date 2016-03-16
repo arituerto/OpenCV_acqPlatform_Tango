@@ -1,4 +1,4 @@
-# OpenCV_acqPlatform
+# OpenCV_acqPlatform_Tango
 Simple app to save an timestamped stream of imaged and timestamped IMU sensor reads.
 
 This app is based in the OpenCV4Android example Tutorial 3 - Camera Control.
@@ -13,14 +13,14 @@ The application saves time stamped images and timestamped sensor events. The sen
 - GAME_ROTATION_VECTOR
 - MAGNETIC_FIELD
 
+This version logs also the translation and orientation estimated by Tango Motion Tracking.
+
 Images are stored as jpg files and include two timestamps (for data synchronization) the acquisition time and the time when the application was launched. Both numbers are defined in the image name:
 
-**img_[acquisition Time, ns]_[app launching time, ns].[XXX image file extension]**
+**img_[acquisition system time, ns]_[app launching system time, ns].[XXX image file extension]**
 
 The app offers an options menu where the focus mode and the image resolution can be configured.
 
 ### Issues
-- I don't know the reference for the sensors timestamps so the synchronization of images and sensor readings is incorrect.
 - The Options Menu is created in the code but this method has been deprecated.
 - OpenCV class JavaCameraView works with the android.hardware.Camera that has been also deprecated.
-
